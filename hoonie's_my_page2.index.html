@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<code/js>
+let m1 = prompt('light모드로 볼까요? dark모드로 볼까요?')
+<code>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -16,7 +19,7 @@
       const projectname = ['엔틜봇 때리기','부자가 되고싶어?','엔틜봇 대사전!']; //여기에 자기 엔트리작품 이름을 입력하세요 (저는 3개만 했지만 여러분은 엄청 많이 하셔도 되요)
       const projectment = ['마음껏 엔틜봇을 때려봐요!','시민갑부','진짜 엔틜봇은 엔틜봇의 정체는 무엇인가'] //여기에 자기 엔트리작품 소개를 입력하세요 
       const projectid = ['5eee2926c583d300f3a4654d','5ee0c0b9224dcc00dd3217e5','5f067868a35c23005635f454'] //여기에 자기 엔트리작품 id를 입력하세요
-      const theme = 'light' //light또는 dark를 입력하세요
+      const theme = m1 //light또는 dark를 입력하세요
       
       
       function load(){
@@ -237,5 +240,5 @@
       </div>
     </svg>
   </body>
-  <script>load();if(theme=='light'){lightmode();}</script>
+  <script>load();if(theme=='light'){lightmode();}else{darkmode();}</script>
 </html>
