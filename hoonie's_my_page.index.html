@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <script>
       const name = 'hoonie0922' //여기에 자기 엔트리아이디를 입력하세요
-      const userid = '5d773c885b1f435931998d8e' //여기에 자기 유저아이디를 입력하세요 (엔트리콘솔창에 user._id를 치면 자신의 유저아이디를 볼수있어요)
+      const userid = '5ecdd44a985774033df7d455' //여기에 자기 유저아이디를 입력하세요 (엔트리콘솔창에 user._id를 치면 자신의 유저아이디를 볼수있어요)
       const gitname = 'john0817-he' //여기에 자기 깃허브아이디를 입력하세요 (깃허브계정이 없으면 그냥 avocad5를 입력하세요<ㅍ)
       const nickname = '훈2'/여기에 자기 별명을 입력하세요 
       const myment = '[ 👍 인 : 3 👑 스 : 0 ] 훈이라고 불러주세요 :3' //여기에 상태메시지를 입력하세요 
@@ -24,7 +24,7 @@
           document.getElementsByClassName('project')[0].innerHTML += `<a href="https://playentry.org/${name}/${projectid[i]}"><img class="pimg" src="https://playentry.org/uploads/thumb/${projectid[i].substring(0,4)}/${projectid[i]}.png"><div class="pdiv"><p class="pname"><strong>${projectname[i]}</strong></p><p class="pment">${projectment[i]}</p></div></a>`
         }
         var avatar = `https://playentry.org/uploads/profile/${userid.substring(0,2)}/${userid.substring(2,4)}/avatar_${userid}.png`
-        document.title = `${nickname}의 공식사이트`
+        document.title = `당신은 ${nickname}의 마이페이지를 보고있습니다.`
         document.querySelector("body > div.name").innerHTML = name
         document.querySelector("body > div.ment").innerHTML = myment
         document.querySelector("body > div.container > svg > path").style.fill = maincolor
