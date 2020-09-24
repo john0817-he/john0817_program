@@ -1,242 +1,241 @@
-<! DOCTYPE html >
-< html  lang = " en " dir = " ltr " >
-  < 머리 >
-    < 메타  문자 세트 = " utf-8 " >
-    < 스크립트 >
-      const  name  =  'hoonie0922'  // 여기에 자기 엔트리 아이디를 입력하세요
-      const  userid  =  '5ecdd44a985774033df7d455'  // 여기에 자기 수있어 아이디를 입력하세요 (엔트리 콘솔 창에 user._id를 치면 자신의 유저 아이디를 볼요)
-      const  gitname  =  'john0817-he'  // 여기에 자기 깃 허브 아이디를 입력하세요 (깃 허브 계정이 그냥 avocad5를 입력하세요 <ㅍ)
-      const  nickname  =  '훈2'  // 여기에 자기 별명을 입력하세요
-      const  myment  =  '[ 👍 인 : 3 👑 스 : 0 ] 훈이라고 불러주세요 :3'  // 여기에 상태를 입력하세요
-      const를  MYWORK  =  '거의 모두 대표작입니다.'  // 여기에 자신의 대표 작품을 입력 하세요
-      const  경력  =  '1~2년'  // 여기에 자신의 경력을 입력하세요
-      const를  설명  =  '훈2라고 불러주세요:3'  // 여기에 자기 소개를 입력하세요
-      const  maincolor  =  '#ffccf'  // 여기에 메인 컬러를 입력하세요 # 87FFB7
-      const  subcolor  =  '#00B2E0'  // 여기에 서브 컬러를 입력하세요
-      const  projectname  =  ['엔틜봇 때리기','부자가 되고싶어?','엔틜봇 대사전!'];  // 여기에 자기 엔트리 작품 이름을 입력하세요 (저는 3 개만했지만 여러분은 엄청 많이 하셔도 되요)
-      const  projectment  =  ['마음껏 엔틜봇을 때려봐요!','시민갑부','사실 엔틜봇은 엔틜봇의 정체는 무엇인가']  // 여기에 자기 엔트리 작품 소개를 입력하세요
-      const  projectid  =  ['5eee2926c583d300f3a4654d','5ee0c0b9224dcc00dd3217e5','5f067868a35c23005635f454']  // 여기에 자기 엔트리 작품 id를 입력하세요
-      const  theme  =  'light'  // light or dark를 입력하세요
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script>
+      const name = 'hoonie0922' //여기에 자기 엔트리아이디를 입력하세요
+      const userid = '5d773c885b1f435931998d8e' //여기에 자기 유저아이디를 입력하세요 (엔트리콘솔창에 user._id를 치면 자신의 유저아이디를 볼수있어요)
+      const gitname = 'avocad5' //여기에 자기 깃허브아이디를 입력하세요 (깃허브계정이 없으면 그냥 avocad5를 입력하세요<ㅍ)
+      const nickname = '훈2' //여기에 자기 별명을 입력하세요 
+      const myment = '[ 👍 인 : 3 👑 스 : 0 ] 훈이라고 불러주세요 :3' //여기에 상태메시지를 입력하세요 
+      const mywork = '알까기의왕' //여기에 자신의 대표작품을 입력하세요
+      const career = '1~2년' //여기에 자신의 경력을 입력하세요
+      const explanation = '코딩과 수학을 좋아하는 평법한 중1' //여기에 자기소개를 입력하세요
+      const maincolor = '#44DAFF' //여기에 메인컬러를 입력하세요 #87FFB7
+      const subcolor = '#BFFFFC' //여기에 서브컬러를 입력하세요
+      const projectname = ['엔틜봇 때리기','부자가 되고싶어?','엔틜봇 대사전!']; //여기에 자기 엔트리작품 이름을 입력하세요 (저는 3개만 했지만 여러분은 엄청 많이 하셔도 되요)
+      const projectment = ['마음껏 엔틜봇을 때려봐요!','시민갑부','진짜 엔틜봇은 엔틜봇의 정체는 무엇인가'] //여기에 자기 엔트리작품 소개를 입력하세요 
+      const projectid = ['5eee2926c583d300f3a4654d','5ee0c0b9224dcc00dd3217e5','5f067868a35c23005635f454'] //여기에 자기 엔트리작품 id를 입력하세요
+      const theme = 'dark' //light또는 dark를 입력하세요
       
       
-      function  load ( ) {
-        for ( var  i  =  0 ;  i < projectname . length ;  i ++ ) {
-          문서 . getElementsByClassName ( 'project' ) [ 0 ] . innerHTML을  + =  '<a href="https://playentry.org/ ${ 이름} / ${ projectid [I]} "> <IMG 클래스 = "pimg"SRC = "https://playentry.org/uploads / thumb / $ { projectid [ i ] . substring ( 0 , 4 ) } / $ { projectid [ i ] } .png "> <div class ="pdiv "> <p class ="$ { projectname [ i ] } </ strong> </ p> <p class = "pment"> $ { projectment [ i ] } </ p> </ div> </a>`
+      function load(){
+        for(var i = 0; i<projectname.length; i++){
+          document.getElementsByClassName('project')[0].innerHTML += `<a href="https://playentry.org/${name}/${projectid[i]}"><img class="pimg" src="https://playentry.org/uploads/thumb/${projectid[i].substring(0,4)}/${projectid[i]}.png"><div class="pdiv"><p class="pname"><strong>${projectname[i]}</strong></p><p class="pment">${projectment[i]}</p></div></a>`
         }
-        var  avatar  =  `https : //playentry.org/uploads/profile/ $ { userid . 하위 문자열 ( 0 , 2 ) } / $ { 사용자 ID . 하위 문자열 ( 2 , 4 ) } / avatar_ $ { userid } .png`
-        문서 . title  =  ` $ { nickname } 의 공식 사이트!`
-        문서 . querySelector ( "body> div.name" ) . innerHTML  =  이름
-        문서 . querySelector ( "body> div.ment" ) . innerHTML  =  myment
-        문서 . querySelector ( "body> div.container> svg> path" ) . 스타일 . 채우기  =  기본 색상
-        문서 . querySelector ( "body> svg.foot> path" ) . 스타일 . 채우기  =  하위 색상
-        문서 . querySelector ( "body> div.profile>는" ) . href  =  `https : //playentry.org/ $ { 이름 } `
-        문서 . querySelector ( "body> div.profile>는" ) . innerHTML  =  `<img src = " $ { 아바타 } ">`
-        문서 . querySelector ( "body> div.profile> div" ) . innerHTML  =  `<p> 이름 : $ { name } </ p> <p> 별명 : $ { nickname } </ p> <p> 대표작 : $ { mywork } </ p> <p> 경력 : $ { 경력 } </ p> <p> 소개 : $ { 설명 } </ p>`
-        문서 . querySelector ( "body> div.footer" ) . innerHTML을  =  '<a href="https://github.com/ ${ gitname} "> <SPAN> Github에서 </ SPAN> </A> <A HREF = "https://playentry.org/ $ { 이름 } #! / "> <span> 항목 </ span> </a>`
-        문서 . querySelector ( "body> div.footer" ) . 스타일 . backgroundColor  =  하위 색상
-        var  css  =  `.project a div : hover {background-color : $ { maincolor } ;}`
-        var  style  =  document . createElement ( '스타일' ) ;
-        if  ( 스타일 . styleSheet )  {
-            스타일 . styleSheet . cssText  =  css ;
-        }  else  {
-            스타일 . 에 appendChild ( 문서 . createTextNode ( CSS ) ) ;
+        var avatar = `https://playentry.org/uploads/profile/${userid.substring(0,2)}/${userid.substring(2,4)}/avatar_${userid}.png`
+        document.title = `당신은 ${nickname}의 마이페이지를 보고있습니다.`
+        document.querySelector("body > div.name").innerHTML = name
+        document.querySelector("body > div.ment").innerHTML = myment
+        document.querySelector("body > div.container > svg > path").style.fill = maincolor
+        document.querySelector("body > svg.foot > path").style.fill = subcolor
+        document.querySelector("body > div.profile > a").href = `https://playentry.org/${name}`
+        document.querySelector("body > div.profile > a").innerHTML = `<img src="${avatar}">`
+        document.querySelector("body > div.profile > div").innerHTML = `<p>이름 : ${name}</p><p>별명 : ${nickname}</p><p>대표작 : ${mywork}</p><p>경력 : ${career}</p><p>소개 : ${explanation}</p>`
+        document.querySelector("body > div.footer").innerHTML = `<a href="https://github.com/${gitname}"><span>Github</span></a><a href="https://playentry.org/${name}#!/"><span>Entry</span></a>`
+        document.querySelector("body > div.footer").style.backgroundColor = subcolor
+        var css = `.project a div:hover{background-color: ${maincolor};}`
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
         }
-        문서 . getElementsByTagName ( 'head' ) [ 0 ] . appendChild ( 스타일 ) ;
+        document.getElementsByTagName('head')[0].appendChild(style);
       }
-      function  darkmode ( ) {
-        var  p  =  문서 . getElementsByTagName ( 'p' )
-        for ( var  i  =  0 ;  i < p . length ;  i ++ ) {
-          p [ i ] . 스타일 . 색상  =  '흰색'
+      function darkmode(){
+        var p = document.getElementsByTagName('p')
+        for(var i = 0; i<p.length; i++){
+          p[i].style.color = 'white'
         }
-        var  pdiv  =  문서 . getElementsByClassName ( 'pdiv' )
-        var  pimg  =  문서 . getElementsByClassName ( 'pimg' )
-        for ( var  i  =  0 ;  i < pdiv . length ;  i ++ ) {
-          pdiv [ i ] . 스타일 . backgroundColor  =  '# 505050'
-          pdiv [ i ] . 스타일 . boxShadow  =  '00 30px -15px # 111111 '
-          pimg [ i ] . 스타일 . boxShadow  =  '00 30px -15px # 111111 '
+        var pdiv = document.getElementsByClassName('pdiv')
+        var pimg = document.getElementsByClassName('pimg')
+        for(var i = 0; i<pdiv.length; i++){
+          pdiv[i].style.backgroundColor = '#505050'
+          pdiv[i].style.boxShadow = '0 0 30px -15px #111111'
+          pimg[i].style.boxShadow = '0 0 30px -15px #111111'
         }
-        문서 . querySelector ( "body" ) . 스타일 . backgroundColor  =  '# 1E1E1E'
-        문서 . querySelector ( "body> div.projecttext" ) . 스타일 . 색상  =  '흰색'
-        문서 . querySelector ( "body> div.profile> a> img" ) . 스타일 . boxShadow  =  '00 30px -15px # 111111 '
+        document.querySelector("body").style.backgroundColor = '#1E1E1E'
+        document.querySelector("body > div.projecttext").style.color = 'white'
+        document.querySelector("body > div.profile > a > img").style.boxShadow = '0 0 30px -15px #111111'
       }
-    </ 스크립트 >
-    < 제목 > 자기 소개 </ 제목 >
-    < 스타일 >
-      @ font-face { font-family : 'GmarketSansBold' ; src : url ( 'https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff' ) 형식 ( 'woff' ); 글꼴 두께 : 보통; 글꼴 스타일 : 보통; }
-      body {
-        여백 : 0 ;
-        배경색 : # FcFcFc ;
+    </script>
+    <title>자기소개</title>
+    <style>
+      @font-face { font-family: 'GmarketSansBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+      body{
+        margin: 0;
+        background-color : #FcFcFc;
       }
-      . 컨테이너 {
-        Z- 색인 : -1 ;
-        디스플레이 : 인라인 블록;
-        위치 : 상대;
-        너비 : 100 % ;
-        padding-bottom : 100 % ;
-        수직 정렬 : 중간;
-        오버플로 : 숨김;
+      .container {
+        z-index:-1;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        vertical-align: middle;
+        overflow: hidden;
       }
-      . head {
-        디스플레이 : 인라인 블록;
-        위치 : 절대;
-        상단 : 0 ;
-        왼쪽 : 0 ;
+      .head {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
-      . svgpath {
-        뇌졸중 : 없음;
-        채우기 : # 87FFB7 ;
+      .svgpath{
+        stroke: none;
+        fill:#87FFB7;
       }
-      . 이름 {
-        마진-상단 : -95 % ;
-        디스플레이 : 플렉스;
-        justify-content : 센터;
-        font-family : "GmarketSansBold" ;
-        글꼴 크기 : 570 % ;
+      .name{
+        margin-top:-95%;
+        display: flex;
+        justify-content: center;
+        font-family: "GmarketSansBold";
+        font-size: 570%;
       }
-      . ment {
-        디스플레이 : 플렉스;
-        justify-content : 센터;
-        색상 : # 404040 ;
-        폰트 크기 : 20 픽셀 ;
+      .ment{
+        display: flex;
+        justify-content: center;
+        color: #404040;
+        font-size: 20px;
       }
-      . 프로필 {
-        디스플레이 : 플렉스;
-        justify-content : 센터;
-        margin-top : 20 % ;
+      .profile{
+        display: flex;
+        justify-content: center;
+        margin-top: 20%;
       }
-      . 프로필  a {
-        여백-오른쪽 : 10 % ;
+      .profile a{
+        margin-right: 10%;
       }
-      . profile  a  img {
-        폭 : 400 픽셀 ;
-        높이 : 400 픽셀 ;
-        상자 그림자 : 0  0  30 픽셀 -10px # A0A0A0 ;
-        border-radius : 30 px ;
-        국경 : 2 픽셀 검은 색;
+      .profile a img{
+        width: 400px;
+        height: 400px;
+        box-shadow: 0 0 30px -10px #A0A0A0;
+        border-radius: 30px;
+        border: 2px solid black;
       }
-      . 프로필  p {
-        폰트 크기 : 25 픽셀 ;
+      .profile p{
+        font-size: 25px;
       }
-      . projecttext {
-        폰트 크기 : 50 픽셀 ;
-        텍스트 정렬 : 가운데;
-        마진-상단 : 10 % ;
-        font-family : "GmarketSansBold" ;
+      .projecttext{
+        font-size: 50px;
+        text-align: center;
+        margin-top: 10%;
+        font-family: "GmarketSansBold";
       }
-      . 프로젝트 {
-        디스플레이 : 플렉스;
-        플렉스 랩 : 랩;
-        justify-content : 센터;
-        마진-상단 : -2 % ;
-        마진-하한 : 10 % ;
+      .project{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -2%;
+        margin-bottom: 10%;
       }
-      . 프로젝트  a {
-        마진 탑 : 100 픽셀 ;
-        폭 : 450 픽셀 ;
-        높이 : 300 픽셀 ;
-        마진 왼쪽 : 50 픽셀 ;
-        마진 오른쪽 : 50 픽셀 ;
-        텍스트 정렬 : 가운데;
-        텍스트 장식 : 없음;
+      .project a{
+        margin-top: 100px;
+        width: 450px;
+        height: 300px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+        text-decoration:none;
       }
-      . project  a  img {
-        폭 : 400 픽셀 ;
-        높이 : 225 px ;
-        border-radius : 30 px ;
-        상자 그림자 : 0  0  30 픽셀 -15px # A0A0A0 ;
-        국경 : 2 픽셀 검은 색;
+      .project a img{
+        width: 400px;
+        height: 225px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px -15px #A0A0A0;
+        border: 2px solid black;
       }
-      . project  a  div {
-        높이 : 170 px ;
-        border-radius : 30 px ;
-        상자 그림자 : 0  0  30 픽셀 -15px # A0A0A0 ;
-        margin-top : -80px;
-        배경색 : 흰색;
-        전환 : 배경색 0.5 초 ;
+      .project a div{
+        height: 170px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px -15px #A0A0A0;
+        margin-top: -80px;
+        background-color: white;
+        transition: background-color 0.5s;
       }
-      . 프로젝트  DIV를 . pname { 
-        색상 : 검정;
-        padding-top : 70 px ;
-        폰트 크기 : 20 픽셀 ;
+      .project a div .pname{
+        color: black;
+        padding-top: 70px;
+        font-size: 20px;
       }
-      . 프로젝트  DIV를 . pment { 
-        색상 : 검정;
-        margin-top : -10px;
+      .project a div .pment{
+        color: black;
+        margin-top: -10px;
       }
-      . 발 {
-        위치 : 상대;
-        -moz- 변환 : scaleY ( -1 );
-        -o- 변환 : scaleY ( -1 );
-        -webkit-transform : scaleY ( -1 );
-        변환 : scaleY ( -1 );
-        필터 : FlipV;
-        -ms-filter : "FlipV" ;
-        채우기 : # BFFFC3 ;
-        margin-top : -1900px;
-        Z- 색인 : -10 ;
+      .foot{
+        position: relative;
+        -moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+        filter: FlipV;
+        -ms-filter: "FlipV";
+        fill: #BFFFC3;
+        margin-top: -1900px;
+        z-index: -10;
       }
-      . footer {
-        디스플레이 : 플렉스;
-        justify-content : 센터;
-        높이 : 100 픽셀 ;
-        배경색 : # BFFFC3 ;
-        margin-top : -100px;
+      .footer{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        background-color: #BFFFC3;
+        margin-top: -100px;
       }
-      . 바닥 글  a {
-        국경 : 2 픽셀 검은 색;
-        border-radius : 5 px ;
-        폭 : 100 픽셀 ;
-        높이 : 50 픽셀 ;
-        텍스트 정렬 : 가운데;
-        폰트 크기 : 20 픽셀 ;
-        padding-top : 15 px ;
-        마진 왼쪽 : 5 픽셀 ;
-        마진 오른쪽 : 5 픽셀 ;
-        전환 : 0.5 초 ;
-        색상 : 검정;
-        텍스트 장식 : 없음;
+      .footer a{
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        transition: 0.5s;
+        color: black;
+        text-decoration:none;
       }
-      . 바닥 글  a : hover {
-        배경색 : 검정;
-        테두리 색상 : 검정;
-        색상 : 흰색;
-        전환 : 0.5 초 ;
+      .footer a:hover{
+        background-color: black;
+        border-color: black;
+        color: white;
+        transition: 0.5s;
       }
-    </ 스타일 >
-    < 머리 >
-</ 머리 >
-  </ 머리 >
-  < 본체 >
-    < div  클래스 = " 컨테이너 " >
-      < SVG의  클래스 = " 헤드 " 뷰 박스 = " 0 0 500 500 " preserveAspectRatio = " xMinYMin 만나는 " >
-        < 경로  d = " M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z " class = " svgpath " > </ path >
-      </ svg >
-    </ div >
-    < div  클래스 = " 이름 " >
+    </style>
+    <head>
+</head>
+  </head>
+  <body>
+    <div class="container">
+      <svg class="head" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+        <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" class="svgpath"></path>
+      </svg>
+    </div>
+    <div class="name">
       avocad5
-    </ div >
-    < div  클래스 = " ment " >
-      훈2라고 불러주세요:3
-    </ div >
-    < div  클래스 = " 프로필 " >
-      < HREF = " https://playentry.org/avocad5「클래스 =" proimg " > </ > 
-      < div  class = " about " >
-        < p > 이름 : hoonie0922 </ p >
-        < p > 별명 : 훈2 </ p >
-        < p > 엔트리 경력 : 1~2년 </ p >
-        < p > 웹 개발 경력 : 없음 </ p >
-        < p > 소개 : 훈2라고 불러주세요! </ p >
-      </ div >
-    </ div >
-    < div  class = " projecttext " > 내 프로젝트 </ div >
-    < div  클래스 = " 프로젝트 " >
+    </div>
+    <div class="ment">
+      훈2라고 불러주세요 :3
+    </div>
+    <div class="profile">
+      <a href="https://playentry.org/avocad5" class="proimg"></a>
+      <div class="about">
+        <p>이름 : hoonie0922</p>
+        <p>별명 : 훈2</p>
+        <p>엔트리 경력 : 1~2년</p>
+        <p>소개 : 훈2입니다!</p>
+      </div>
+    </div>
+    <div class="projecttext">my projects</div>
+    <div class="project">
 
-    </ div >
-    < SVG의  클래스 = " 발 " 뷰 박스 = " 0 0 500 500 " preserveAspectRatio = " xMinYMin 대회 " >
-      < 경로  d = " M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z " > </ 경로 >
-      < div  class = " 바닥 글 " >
-      </ div >
-    </ svg >
-  </ 본문 >
-  < 스크립트 > load ( ) ; if ( theme == 'dark' ) { darkmode ( ) ; } </ 스크립트 >
-</ html >
+    </div>
+    <svg class="foot" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"></path>
+      <div class="footer">
+      </div>
+    </svg>
+  </body>
+  <script>load();if(theme=='dark'){darkmode();}</script>
+</html>
