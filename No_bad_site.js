@@ -5,7 +5,7 @@ const arr = ['https://blow.ga/vitamin303','https://blow.ga/vitamin303/','https:/
 alert("안전 사이트열기 프로그램(v.1.4)을 실행합니다.")
 let m1 = prompt('열고 싶은 사이트의 링크를 입력해주세요. https,http까지 입력해주세요')
 for(let index in arr){
-if((arr[index])==m1) {o=index;if(index >1000){alert("안전한 사이트입니다.")}else{console.log("악성 사이트 방지 프로그램을 다시 시작하려면 F5를 눌러주세요.");}};
+if((arr[index])==m1) {if(index >1000){alert("안전한 사이트입니다.")}else{console.log("악성 사이트 방지 프로그램을 다시 시작하려면 F5를 눌러주세요.");}};
 };let WARNING = false;
 arr.forEach(e => {
 WARNING = WARNING || e == m1
