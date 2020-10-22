@@ -5,7 +5,7 @@
 <script>alert('오늘도 열심히 살아봅시다')</script>
 <script>function asdf() {
 m1 = prompt('검색하려는 단어를 입력해주세요(잘못 눌렀다면 취소를 클릭)');
-if(m1!='null'){window.open('https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query='+m1)}else{alert('취소되었습니다')}}
+if(m1==null){alert('취소되었습니다')}else{window.open('https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query='+m1)}}
 </script>
 </head>
 <body>
