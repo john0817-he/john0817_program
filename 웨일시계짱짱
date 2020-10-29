@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title i18n-content="NTP_TITLE"></title>
+  <link rel="shortcut icon" href="chrome://resources/whale/img/favicon.png">
+  <link rel="stylesheet" href="chrome://resources/whale/css/common.css">
+  <link rel="stylesheet" href="css/ntp.css">
+  <script src="chrome://resources/js/assert.js"></script>
+  <script defer src="chrome://resources/js/load_time_data.js"></script>
+  <script defer src="js/dist/ntp.common.min.js"></script>
+  <script defer src="js/dist/ntp.head.min.js"></script>
+</head>
+<body>
+<div id="bg-desc" class="col hidden">
+  <button type="button" class="image" data-logging-type="NTP.imgurl"></button>
+  <span class="text">
+    <button type="button" class="textA" data-logging-type="NTP.imgurl"></button>
+    <button type="button" class="textB" data-logging-type="NTP.imgurl"></button>
+  </span>
+</div>
+
+<div id="view-port" class="loading empty-mode">
+  <div id="main-view">
+    <ntp-search></ntp-search>
+    <div id="rotatable-view">
+      <div class="clock-area clock-container"></div>
+      <div class="topsite-area topsite-container select-none"></div>
+      <div class="widget-area"></div>
+    </div>
+    <div class="page-index-container select-none">
+      <span class="page-index" data-key="topsite" data-logging-type="NTP.mode">
+        <i class="icon-page-index"></i>
+      </span>
+      <span class="page-index" data-key="digital" data-logging-type="NTP.mode">
+        <i class="icon-page-index"></i>
+      </span>
+      <span class="page-index" data-key="analog" data-logging-type="NTP.mode">
+        <i class="icon-page-index"></i>
+      </span>
+    </div>
+  </div>
+
+  <div id="report-container">
+    <a id="report-suggestion" class="btn-report"
+      href="https://lab.whale.naver.com/"
+      i18n-values=".title:NTP_FEEDBACK_LINK_TEXT"></a>
+  </div>
+
+  <div id="setting" class="widget-container">
+    <button class="col btn-widget-more setting-trigger"
+      data-logging-type="NTP.setting"></button>
+
+    <div id="setting-position-pointer" class="popup-positino-pointer">
+      <div id="popup-setting" class="modal">
+        <div class="modal-header">
+          <div>
+            <button type="button" data-href="#setting-background"
+              class="modal-title active" i18n-content="NTP_SETTINGS_THEME"></button>
+            <button type="button" data-href="#setting-widget"
+              class="modal-title" i18n-content="NTP_SETTINGS_WIDGET"></button>
+          </div>
+          <div class="modal-footer-setting">
+            <span class="option-desc" i18n-content="NTP_SETTINGS_USE_SYNC"></span>
+            <label id="chk-sync-setting" class="toggle right-side">
+              <input type="checkbox">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+
+        <section id="setting-background" class="setting-content">
+          <div class="setting-section top">
+            <div class="section-title background-section-title">
+              <button type="button" data-type="theme"
+                class="bg-menuitem active" i18n-content="NTP_SETTINGS_THEME_STORE"></button>
+              <button type="button" data-type="ncloud"
+                class="bg-menuitem" i18n-content="NTP_SETTINGS_THEME_NCLOUD"></button>
+              <button type="button" data-type="local"
+                class="bg-menuitem" i18n-content="NTP_SETTINGS_THEME_LOCAL"></button>
+            </div>
+            <div class="section-body bg-container">
+              <div id="bg-theme" class="bg-content">
+                <span class="bg-title" hidden><span class="text-title"></span></span>
+                <div class="bg-items-featured">
+                  <div class="items"></div>
+                  <button type="button" class="btn-prev inactive" data-action="featured:prevPage"></button>
+                  <button type="button" class="btn-next" data-action="featured:nextPage"></button>
+                </div>
+                <div class="bg-item"></div><div class="bg-item"></div>
+                <div class="bg-item"></div><div class="bg-item"></div>
+                <div class="bg-item reserved" data-theme-id="ede8423b5b0e4df8a819d595ab45dbd3"><!--
+                    Reserved slot for the whale-pick theme.
+                --></div>
+                <div class="bg-item"></div><div class="bg-item"></div>
+                <a href="https://store.whale.naver.com/wallpapers/" target="_blank" class="store-link">
+                  <span class="text" i18n-content="NTP_SETTINGS_MORE_THEMES"></span>
+                </a>
+                <div id="background-image-history">
+                  <span class="title" i18n-content="NTP_SETTINGS_THEME_HISTORY"></span>
+                  <div class="bg-history-list">
+                    <div class="items"></div>
+                  </div>
+                  <button type="button" class="btn-prev inactive" data-action="history:prevPage"></button>
+                  <button type="button" class="btn-next inactive" data-action="history:nextPage"></button>
+                </div>
+              </div>
+              <!-- // -->
+              <div id="bg-ncloud" class="bg-content" hidden>
+                <div class="icon-container">
+                  <i class="icon icon-ncloud2"></i>
+                </div>
+                <div class="bg-title" data-if-signed-in="true" hidden>
+                  <span class="text" data-if-ncloud-path="false"
+                    i18n-content="NTP_SETTINGS_THEME_NCLOUD_DESCRIPTION"></span>
+                  <span class="text" data-if-ncloud-path="true" hidden
+                    data-field="ncloudPath"></span>
+                  <button class="btn-explorer" data-action="ncloud:openExplorer"
+                    i18n-content="NTP_SETTINGS_THEME_NCLOUD_SELECT"></button>
+                </div>
+                <div class="bg-title" data-if-signed-in="false" hidden>
+                  <span class="text"
+                    i18n-content="NTP_SETTINGS_THEME_NCLOUD_DESCRIPTION"></span>
+                  <button class="btn-explorer" data-action="ncloud:showLoginPopup"
+                    i18n-content="NTP_SETTINGS_THEME_NCLOUD_LOGIN"></button>
+                </div>
+              </div>
+              <!-- // -->
+              <div id="bg-local" class="bg-content" hidden>
+                <div class="icon-container">
+                  <i class="icon icon-image"></i>
+                </div>
+                <div class="bg-title">
+                  <span class="text" data-if-local-path="false"
+                    i18n-content="NTP_SETTINGS_THEME_LOCAL_DESCRIPTION"></span>
+                  <span class="text" data-if-local-path="true" hidden
+                    data-field="localPath"></span>
+                  <button class="btn-explorer" data-action="local:openExplorer"
+                    i18n-content="NTP_SETTINGS_THEME_LOCAL_SELECT"></button>
+                </div>
+              </div>
+              <!-- // -->
+            </div>
+          </div>
+          <div id="period-option" class="setting-section bottom flex-align-justify">
+            <span class="section-title" i18n-content="NTP_SETTINGS_THEME_PERIOD"></span>
+            <select class="setting-select" name="period-image">
+              <option value="hour" i18n-content="NTP_SETTINGS_THEME_PERIOD_HOUR"></option>
+              <option value="day" i18n-content="NTP_SETTINGS_THEME_PERIOD_DAY"></option>
+              <option value="tab" i18n-content="NTP_SETTINGS_THEME_PERIOD_TAB"></option>
+              <option value="infinite" i18n-content="NTP_SETTINGS_THEME_PERIOD_INFINITE"></option>
+            </select>
+          </div>
+        </section>
+
+        <section id="setting-widget" class="setting-content" hidden>
+          <div class="setting-section top flex-align-justify">
+            <div class="section-block-container">
+              <div class="section-block main-widgets">
+                <div class="section-title">
+                  <span i18n-content="NTP_SETTINGS_WIDGET_MAIN_TITLE"></span>
+                  <label class="toggle right-side">
+                    <input type="checkbox" name="enable-main-widget">
+                    <div class="slider round"></div>
+                  </label>
+                </div>
+                <div id="main-widgets">
+                  <div class="main-widget-options">
+                    <label class="main-widget-option">
+                      <input type="radio" name="main-widget" value="topsite">
+                      <div class="main-widget-preview">
+                        <img src="img/settings/preview_topsites@2x.png">
+                      </div>
+                      <span i18n-content="NTP_SETTINGS_WIDGET_TOPSITE"></span>
+                    </label>
+                    <label class="main-widget-option">
+                      <input type="radio" name="main-widget" value="digital">
+                      <div class="main-widget-preview">
+                        <img src="img/settings/preview_digitalclock@2x.png">
+                      </div>
+                      <span i18n-content="NTP_SETTINGS_WIDGET_CLOCK_DIGITAL"></span>
+                    </label>
+                    <label class="main-widget-option">
+                      <input type="radio" name="main-widget" value="analog">
+                      <div class="main-widget-preview">
+                        <img src="img/settings/preview_analogclock@2x.png">
+                      </div>
+                      <span i18n-content="NTP_SETTINGS_WIDGET_CLOCK_ANALOG"></span>
+                    </label>
+                  </div>
+                  <div class="main-widget-sub-option">
+                    <label for="show_frequently_visited_sites"
+                        i18n-content="NTP_TOPSITE_MOST_VISITED_SITES"></label>
+                    <input type="checkbox" id="show_frequently_visited_sites">
+                  </div>
+                </div>
+              </div>
+              <div class="section-block footer-widgets">
+                <div class="section-title">
+                  <span i18n-content="NTP_SETTINGS_WIDGET_MINI_TITLE"></span>
+                  <label class="toggle right-side">
+                    <input type="checkbox" name="enable-mini-widget">
+                    <div class="slider round"></div>
+                  </label>
+                </div>
+                <div id="mini-widgets" class="footer-widget-options">
+                  <div class="footer-widget-option weather">
+                    <label for="footer-widget-weather"
+                        i18n-content="NTP_SETTINGS_WIDGET_WEATHER"></label>
+                    <input type="checkbox" name="footer-widget"
+                        id="footer-widget-weather"
+                        value="weather" data-target="#weather" checked>
+                  </div>
+                  <div class="footer-widget-option clock">
+                    <label for="footer-widget-clock"
+                        i18n-content="NTP_SETTINGS_WIDGET_CLOCK"></label>
+                    <input type="checkbox" name="footer-widget"
+                        id="footer-widget-clock"
+                        value="clock" data-target="#clock" checked>
+                  </div>
+                  <div class="footer-widget-option todo">
+                    <label for="footer-widget-todo"
+                        i18n-content="NTP_SETTINGS_WIDGET_TODO"></label>
+                    <input type="checkbox" name="footer-widget"
+                        id="footer-widget-todo"
+                        value="todo" data-target="#todo" checked>
+                  </div>
+                  <div class="footer-widget-option topsite">
+                    <label for="footer-widget-topsite"
+                        i18n-content="NTP_SETTINGS_WIDGET_TOPSITE"></label>
+                    <input type="checkbox" name="footer-widget"
+                        id="footer-widget-topsite"
+                        value="topsite" data-target="#topsite" checked>
+                  </div>
+                  <div class="footer-widget-option rankup">
+                    <label for="footer-widget-rankup"
+                        i18n-content="NTP_SETTINGS_WIDGET_RANKUP"></label>
+                    <input type="checkbox" name="footer-widget"
+                        id="footer-widget-rankup"
+                        value="rankup" data-target="#rankup" checked>
+                  </div>
+                </div>
+              </div>
+              <div class="section-block naver-search">
+                <div class="section-title">
+                  <span i18n-content="NTP_SETTINGS_WIDGET_NAVER_SEARCH"></span>
+                  <label class="toggle right-side">
+                    <input type="checkbox" name="enable-naver-search">
+                    <div class="slider round"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="setting-section bottom flex-align-justify">
+            <span class="section-title" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY"></span>
+            <select class="setting-select" name="display-mode">
+              <option value="always" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY_ALWAYS"></option>
+              <option value="hover" i18n-content="NTP_SETTINGS_WIDGET_DISPLAY_HOVER"></option>
+            </select>
+          </div>
+        </section>
+
+        <!-- // -->
+        <!-- // -->
+      </div><!-- popup-setting -->
+    </div>
+  </div>
+
+  <div id="footer" hidden>
+    <div id="weather" class="widget-container"></div>
+    <div id="todo" class="widget-container"
+        data-modal-trigger="click"
+        data-logging-type="NTP.todoFoot"></div>
+    <div id="topsite" class="widget-container"
+        data-modal-trigger="hover"
+        data-logging-type="NTP.topsiteFoot"></div>
+    <div id="clock" class="widget-container clock-container"
+        data-modal-trigger="hover"></div>
+    <div id="rankup" class="widget-container"
+        data-modal-trigger="hover"></div>
+  </div>
+</div>
+
+<div id="modal-container" class="overlay"></div>
+
+<div id="alert-overlay" class="alert-overlay centered-content">
+  <div id="alert-container" class="alert-warning modal-content centered-content"></div>
+</div>
+
+<noscript data-deferred>
+  <link rel="stylesheet" href="css/ntp.animation.css">
+  <link rel="stylesheet" href="css/ntp.favicon.css">
+  <link rel="stylesheet" href="chrome://resources/whale/css/roboto.css">
+  <link rel="stylesheet" href="chrome://resources/whale/css/loading.css">
+</noscript>
+<noscript data-deferred data-if-mobile="false">
+  <link rel="stylesheet" href="css/ntp.weathericon.css">
+  <link rel="stylesheet" href="css/ntp.settings.css">
+</noscript>
+
+<div id="deferred" hidden>
+  <script defer src="chrome://resources/whale/js/strings.js"></script>
+  <script defer src="chrome://resources/whale/js/i18n_template.js"></script>
+  <script defer src="js/dist/ntp.body.min.js"></script>
+  <script defer src="js/dist/ntp.favicon.min.js"></script>
+</div>
+
+<ntp-wallpaper id="background"></ntp-wallpaper>
+</body>
+</html>
