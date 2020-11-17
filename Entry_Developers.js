@@ -527,7 +527,29 @@ VALUE: 0
 }, 'text', (sprite, script) => { const value = script.getValue('VALUE', script);
 return global.user.role;
 }, 'basic_string_field')
-///////////////////블럭 추가끝
+//////////////////
+
+
+////////////////////
+addBlock('finish', '오류 발생시키기%1', {
+color: '#0000ff',
+outerLine: '#0000ff'
+}, {
+params: [
+{
+type: 'Block',
+}
+],
+def: [
+null
+],
+map: {}
+}, 'text', (sprite, script) => {
+finish()
+return script.callReturn()
+})
+///////////////블록 추가 끝////////////
+
 
 
 Entry.staticBlocks.push({
@@ -538,7 +560,8 @@ category: 'API', blocks: [
 'print',
 'code',
 'code_look',
-'user_role'
+'user_role',
+'finish'
 ]
 });
 
