@@ -538,6 +538,7 @@ outerLine: '#0000ff'
 params: [
 {
 type: 'Block',
+accept: 'string'
 }
 ],
 def: [
