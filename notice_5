@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>notice_5</title>
+<script>
+	if(prompt('이글은 비공개 글입니다. 암호를 입력해주세요.')=='godsero'){alert('인증이 완료되었습니다✅')}else{alert('비공개 글을 볼수 없습니다.');window.location.href="https://raw.githack.com/john0817-he/john0817/master/john0817's_notice.html";}
+	</script>
+</head>
+<body>
+	<a href="https://raw.githack.com/john0817-he/john0817/master/john0817's_notice.html" style="color:black">←돌아가기</a>
+	<hr>
+	<h1>
+🔒(비공개)Sero 검색엔진
+</h1>
+<hr>
+<iframe src="https://seroweb.jekug.repl.co/" width="1000" height="420"></iframe>
+<p style="color:green">john0817님이 HTML파일을 첨부하였습니다.(이 파일은 안전합니다✅)</p>
+<hr>
+<p>그냥 여기에 올려 봤어요. ㅎㅎ</p>
+<h6 style="color:blue">메일 : john0817expert@outlook.kr 디스코드 : john0817#8947 깃헙 : john0817-he</h6>
+</body>
+</html>
