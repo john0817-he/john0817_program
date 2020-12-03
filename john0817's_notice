@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>존8의 소식</title>
+<script>
+alert('여기서 존8의 새로운 소식을 볼수 있습니다. 사이트에 방문해 주셔서 감사합니다.');
+</script>
+</head>
+<body>
+<h1>존8의 새로운 소식 및 중요한 한국 뉴스</h1>
+<hr>
+<a href="https://raw.githack.com/john0817-he/john0817/master/Start_Off_BETA_finish.html">Start_Off 베타 서비스 종료 안내</a><strong> 1번째글 | 2020년 12월 3일</strong>
+</body>
+</html>
