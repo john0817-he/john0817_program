@@ -28,4 +28,4 @@ const youtube = () =>{window.location.href='https://youtube.com/'};
 const 입력창 = (e) =>{prompt(e)};
 console.log('Loading_finish');
 alert('로딩이 완료되었습니다. TG코드는 한번만 입력하면 해당 콘솔에서 이용 가능하며 타 사이트로 이동할땐 다시 설치해야할수 있습니다.')
-console.log('✅인증된 TG가 정상 작동중입니다.');
+console.log('✅인증된 TG가 정상 작동중입니다. (공식빌드 1.0)');
